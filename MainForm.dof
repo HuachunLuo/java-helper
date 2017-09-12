@@ -134,3 +134,26 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
+[Excluded Packages]
+c:\program files (x86)\borland\delphi7\Projects\Bpl\dcldac70.bpl=Devart Data Access Components
+C:\Program Files (x86)\Borland\Delphi7\Projects\Bpl\dacvcl70.bpl=Devart Data Access GUI related Components
+c:\program files (x86)\borland\delphi7\Projects\Bpl\unidacvcl70.bpl=Devart Universal Data Access GUI related Components
+c:\program files (x86)\borland\delphi7\Projects\Bpl\dclunidac70.bpl=Devart Universal Data Access Components
+c:\program files (x86)\borland\delphi7\Projects\Bpl\oraprovider70.bpl=(untitled)
+c:\program files (x86)\borland\delphi7\Projects\Bpl\tdsprovider70.bpl=UniDAC TDS Provider
+c:\program files (x86)\borland\delphi7\Projects\Bpl\myprovider70.bpl=(untitled)
+c:\program files (x86)\borland\delphi7\Projects\Bpl\ibprovider70.bpl=(untitled)
+c:\program files (x86)\borland\delphi7\Projects\Bpl\pgprovider70.bpl=UniDAC PostgreSQL Provider
+c:\program files (x86)\borland\delphi7\Projects\Bpl\odbcprovider70.bpl=UniDAC ODBC Provider
+c:\program files (x86)\borland\delphi7\Projects\Bpl\accessprovider70.bpl=UniDAC Access Provider
+c:\program files (x86)\borland\delphi7\Projects\Bpl\adsprovider70.bpl=UniDAC Advantage Provider
+c:\program files (x86)\borland\delphi7\Projects\Bpl\mongoprovider70.bpl=UniDAC MongoDB Provider
+c:\program files (x86)\borland\delphi7\Projects\Bpl\dclvquery70.bpl=Devart Virtual Data Access Components
+c:\program files (x86)\borland\delphi7\Projects\Bpl\dclcrcontrols70.bpl=Devart Controls
+C:\Program Files (x86)\RemObjects Software\Hydra for Delphi\Dcu\D7\Hydra_RO_D7.bpl=RemObjects Hydra - RemObjects SDK Integration Library
+C:\Program Files (x86)\RemObjects Software\Hydra for Delphi\Dcu\D7\Hydra_RO_IDE_D7.bpl=RemObjects Hydra - RemObjects SDK IDE Integration
+C:\Program Files (x86)\Borland\Delphi7\bin\EurekaLogComponent.bpl=EurekaLog IDE component for Borland Delphi 7
+C:\Program Files (x86)\Borland\Delphi7\bin\EurekaLogExpert.bpl=EurekaLog IDE expert for Borland Delphi 7
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
