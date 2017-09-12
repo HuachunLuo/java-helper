@@ -110,7 +110,7 @@ ActiveLang=
 ProjectLang=
 RootDir=C:\Program Files (x86)\Borland\Delphi7\Bin\
 [Version Info]
-IncludeVerInfo=0
+IncludeVerInfo=1
 AutoIncBuild=0
 MajorVer=1
 MinorVer=0
@@ -124,8 +124,8 @@ DLL=0
 Locale=2052
 CodePage=936
 [Version Info Keys]
-CompanyName=
-FileDescription=
+CompanyName=动力科技
+FileDescription=辅助设置JAVA环境变量
 FileVersion=1.0.0.0
 InternalName=
 LegalCopyright=
@@ -133,7 +133,7 @@ LegalTrademarks=
 OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
-Comments=
+Comments=帮助JDK、Tomcat、Maven 设置变量。
 [Excluded Packages]
 c:\program files (x86)\borland\delphi7\Projects\Bpl\dcldac70.bpl=Devart Data Access Components
 C:\Program Files (x86)\Borland\Delphi7\Projects\Bpl\dacvcl70.bpl=Devart Data Access GUI related Components
