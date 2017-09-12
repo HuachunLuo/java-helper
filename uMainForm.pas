@@ -31,7 +31,7 @@ type
     envMgr: TEnvironmentMgr;
     function VerifityJDKDir(_Path: string): Boolean;
     function VerifityTomcatDir(_Path: string): Boolean;
-    function GetDirectory(initDir: string = 'c:\'): string;
+    function GetDirectory(ACaption: string): string;
     { Private declarations }
   public
     { Public declarations }
@@ -80,7 +80,7 @@ end;
 
 procedure TForm1.btnMavenClick(Sender: TObject);
 begin
-  edtMaven.Text := GetDirectory();
+  edtMaven.Text := GetDirectory('请选择 Maven 安装目录');
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);
@@ -95,14 +95,14 @@ end;
 
 procedure TForm1.btnSelectDirectoryClick(Sender: TObject);
 begin
-  edtJDK.Text := GetDirectory();
+  edtJDK.Text := GetDirectory('请选择 JDK 安装目录');
 end;
 
 procedure TForm1.btnTomcatClick(Sender: TObject);
 var
   tmpPath: string;
 begin
-  edtTomcat.Text := GetDirectory();
+  edtTomcat.Text := GetDirectory('请选择 Tomcat 安装目录');
 
   tmpPath := edtTomcat.Text;
   if Length(Trim(tmpPath)) = 0 then
@@ -117,12 +117,12 @@ begin
   envMgr.SetTomcatEnvironment(tmpPath);
 end;
 
-function TForm1.GetDirectory(initDir: string): string;
+function TForm1.GetDirectory(ACaption: string): string;
 var
   aPath: string;
 begin
   aPath := 'c;';
-  if SelectDirectory('选择JDK安装目录', '', aPath) then
+  if SelectDirectory(ACaption, '', aPath) then
     Result := aPath;
 end;
 
