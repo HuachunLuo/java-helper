@@ -1,9 +1,11 @@
 object Form1: TForm1
   Left = 603
   Top = 167
-  Width = 414
-  Height = 522
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
   Caption = 'JAVA '#21161#25163
+  ClientHeight = 493
+  ClientWidth = 406
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
