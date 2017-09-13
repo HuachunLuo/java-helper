@@ -91,6 +91,8 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   envMgr := TEnvironmentMgr.create;
+
+  edtJDK.Text := envMgr.getJDKCurrentDir;
 end;
 
 procedure TForm1.btnSelectDirectoryClick(Sender: TObject);

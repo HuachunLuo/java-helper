@@ -7,6 +7,8 @@ uses
   uEnvironmentMgr in 'uEnvironmentMgr.pas';
 
 {$R *.res}
+{$R UAC.res}
+
 
 begin
   Application.Initialize;

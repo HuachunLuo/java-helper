@@ -10,6 +10,8 @@ type
   private
     Reg: TRegistry;
   public
+    function GetJDKCurrentVersion: string;
+    function getJDKCurrentDir: string;
     function SetJdkEnvironment(const _JDKPath: string): Boolean;
     function SetTomcatEnvironment(const _TomcatPath: string): Boolean;
     function SetMavenEnvironment(const _MavenPath: string): Boolean;
@@ -31,6 +33,77 @@ destructor TEnvironmentMgr.destroy;
 begin
   inherited destroy;
   FreeAndNil(Reg);
+end;
+
+function TEnvironmentMgr.getJDKCurrentDir: string;
+{-------------------------------------------------------------------------------
+  过程名:    TEnvironmentMgr.getJDKCurrentDir
+  作者:      robert
+  日期:      2017.09.13
+  参数:      无
+  返回值:    String
+  说明:      取得当前JDK的安装目录。	
+-------------------------------------------------------------------------------}
+var
+  sVersion: string;
+begin
+  Result := '';
+  sVersion := GetJDKCurrentVersion;
+  if sVersion = '' then
+  begin
+    ShowMessage('无法取得版本号');
+    exit;
+  end;
+
+  Reg.RootKey := HKEY_LOCAL_MACHINE;
+  if reg.OpenKey(Format('\SOFTWARE\JavaSoft\Java Development Kit\%s', [sVersion]), False) then
+  begin
+    if reg.ValueExists('JavaHome') then
+    begin
+      Result := Reg.ReadString('JavaHome');
+    end
+    else begin
+      ShowMessage('无法取得javahome');
+      exit;
+    end;
+  end
+  else  begin
+    ShowMessage('无法打开节点');
+    exit;
+  end;
+end;
+
+function TEnvironmentMgr.GetJDKCurrentVersion: string;
+{-------------------------------------------------------------------------------
+  过程名:    TEnvironmentMgr.GetJDKCurrentVersion
+  作者:      robert
+  日期:      2017.09.13
+  参数:      无
+  返回值:    String
+  说明:      取得当前jdk版本号。如果无版本号。则返回为空。
+	
+-------------------------------------------------------------------------------}
+begin
+  Result := '';
+  Reg.RootKey := HKEY_LOCAL_MACHINE;
+  if reg.OpenKey('\SOFTWARE\JavaSoft\ABD', False) then
+  begin
+    if Reg.ValueExists('CurrentVersion') then
+    begin
+      Result := reg.ReadString('CurrentVersion');
+    end
+    else begin
+      ShowMessage('无法打开 CurrentVersion');
+     // exit;
+    end;
+    Reg.CloseKey;
+  end
+  else
+  begin
+//    HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Development Kit
+    ShowMessage('无法打开 \SOFTWARE\JavaSoft\Java Development Kit');
+    //exit;
+  end;
 end;
 
 function TEnvironmentMgr.SetJdkEnvironment(const _JDKPath: string): Boolean;
